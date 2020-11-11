@@ -63,9 +63,7 @@ class FlutterMidi extends FlutterMidiPlatform {
   /// Play a midi note in the range between 0-256
   /// Multiple notes can be played at once as seperate calls.
   @override
-  Future<String> playMidiNote({
-    @required int midi,
-  }) async {
+  Future<String> playMidiNote({@required int midi, int velocity}) async {
     return await _channel.invokeMethod('play_midi_note', {"note": midi});
   }
 }
